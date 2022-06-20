@@ -63,12 +63,14 @@ jobs:
     environment:
       name: "Development"
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-   
+
     steps:
-    - name: Download artifact from build job
-      uses: actions/download-artifact@v3
-      with:
-        name: node-app
+    - uses: actions/checkout@v3
+    - name: Build the site in the jekyll/builder container
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp 
