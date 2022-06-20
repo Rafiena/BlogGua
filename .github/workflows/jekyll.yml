@@ -1,4 +1,4 @@
-
+name: jekyll
 on:
   push:
     branches: [ "main" ]
