@@ -1,4 +1,4 @@
-name: Jekyll site CI
+name: DESKTOP-S9A0QN7 
 
 on:
   push:
@@ -9,11 +9,11 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu latest
+    runs-on:self-hosted
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the site in the jekyll/builder container
+    - name: Build the site in the DESKTOP-S9A0QN7/builder container
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
