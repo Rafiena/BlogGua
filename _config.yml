@@ -1,3 +1,3 @@
-./
-add safe global
+
+bundler gem: ./execute-global 
 plugin: paginate
