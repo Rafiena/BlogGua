@@ -2,13 +2,13 @@
 name: jackal 
 on:
   push:
-    branches: "main"
+    branches: ["main"]
   pull_request:
-    branches: "main"
+    branches: ["main"]
 jobs:
   build:
 
-    runs-on: debian latest 
+    runs-on: Kali.linux latest 
 
 
 
