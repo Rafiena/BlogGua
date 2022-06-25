@@ -1,10 +1,10 @@
 
-name: jackal 
+name: jekyll 
 on:
   push:
-    branches: ["main"]
+    branches: ""
   pull_request:
-    branches: ["main"]
+    branches: ""
 jobs:
   build:
 
@@ -15,8 +15,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: build the site in the jekyll/jekyll build container
+    - name: build the site in the jekyll/jekyll container
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -m "chmod -R 777 /srv/jekyll && jekyll build --incremental
+        jekyll/builder:latest /bin/bash -m "chmod -R 777 /srv/jekyll && jekyll build --incremental"
