@@ -15,8 +15,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: build the site in the jekyll/builder container
+    - name: build the site in the jekyll/docker container
       run: |
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -m "chmod -R 777 /srv/jekyll && jekyll build --false"
+        jekyll/builder:latest /bin/bash -m "chmod -R 777 /srv/jekyll && jekyll build --verbose
