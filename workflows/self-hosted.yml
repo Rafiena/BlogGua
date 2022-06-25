@@ -2,9 +2,9 @@
 name: jackal 
 on:
   push:
-    branches: ""
+    branches: "default"
   pull_request:
-    branches: ""
+    branches: "main"
 jobs:
   build:
 
