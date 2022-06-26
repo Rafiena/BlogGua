@@ -4,13 +4,10 @@
 name: Node.js 
 
 on:
-  push:
-    branches: default 
-  pull_request:
+    branches: default
     branches: default 
 steps: default 
 jobs:
-  build:
 
     runs-on: ubuntu-latest
 
