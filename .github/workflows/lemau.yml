@@ -1,5 +1,36 @@
+jobs:
+  build:
+    runs-on: Ubuntu-latest 
+    steps:
+    - uses: actions/checkout@v3
 
-name: jekyll 
+    - name: CI
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ JEKYLL_VERSION }}
+       
+    
+
+    name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: node.js
+        path: variable 
+
+  deploy:
+    permissions: read
+      contents: none
+    runs-on: Ubuntu latest 
+    needs: build
+    environment: variable 
+      name:
+      job: ${{GITHUB_TOKEN}}
+
+    steps:
+      name: Download artifact from build job
+      uses: actions/download-artifact@v3
+
+//...name: jekyll 
 job: 
  
     steps:
@@ -11,4 +42,4 @@ job:
     - run: |
           docker /
        
-    -v ${{ github.workspace }}/_site:/srv/jekyll/jekyll/builder:latest /bin/bash -m "chmod -R 777 /srv/jekyll && jekyll build --future"
+    ///..-v ${{ github.workspace }}/_site:/srv/jekyll/jekyll/builder:latest /bin/bash -m "chmod -R 777 /srv/jekyll && jekyll build --future"
