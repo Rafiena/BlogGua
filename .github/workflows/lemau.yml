@@ -1,5 +1,5 @@
 
-name: gua
+name: CI
 job:
 build:
 type:
