@@ -1,9 +1,8 @@
 
 name: jekyll 
-job: |
-build:|
+job: 
  
-    
+    steps:
           -run-on: Ubuntu latest 
                   
 
@@ -12,5 +11,4 @@ build:|
     - run: |
           docker /
        
-    -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site
-         jekyll/builder:latest /bin/bash -m "chmod -R 777 /srv/jekyll && docker build --future"
+    -v ${{ github.workspace }}/_site:/srv/jekyll/jekyll/builder:latest /bin/bash -m "chmod -R 777 /srv/jekyll && jekyll build --future"
