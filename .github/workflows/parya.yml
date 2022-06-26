@@ -1,5 +1,5 @@
 
-name: Bangla
+name: ruby_gem
 job:
 build:
     runs-on: Ubuntu-latest 
