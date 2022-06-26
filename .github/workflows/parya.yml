@@ -1,15 +1,12 @@
 
 name: Bangla
-
+job:
+build:
     runs-on: Ubuntu-latest 
-
-
-
-
-    steps:
+ steps:
     - uses: actions/checkout@v3
     - name: build the site in the jekyll/jekyll container
       run: default 
         docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -m "chmod -R 777 /srv/jekyll && jekyll build --future"
+   -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site
+         jekyll/builder:latest /bin/bash -m "chmod -R 777 /srv/jekyll && docker build --future"
