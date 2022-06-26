@@ -1,0 +1,8 @@
+name: github-workspace
+types: default 
+build: ""
+steps:
+job:
+    -run-on: Ubuntu-latest
+
+upload artifacts: default 
