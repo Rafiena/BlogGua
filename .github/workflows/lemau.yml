@@ -4,29 +4,17 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Jekyll 
+    - name: node.js
       uses: actions/setup-node@v3
       with:
         node-version: ${{ JEKYLL_VERSION }}
        
     
 
-    name: Upload artifact for deployment job
+    {{{name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
       with:
         name: node.js
-        path: variable 
+        path: variable}}}
 
-  deploy:
-    permissions: default 
-      contents: none
-    runs-on: Ubuntu latest 
-    types: build
-    environment: variable 
-      name:
-      job: ${{GITHUB_TOKEN}}
-
-    steps:
-      name: Download artifact from build job
-      uses: actions/download-artifact@v3
-
+  
