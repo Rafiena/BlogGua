@@ -1,8 +1,9 @@
 
-name: ruby_gem
+name: ruby 
 job:
-build:
-    runs-on: Ubuntu-latest 
+permission: 
+
+    -run on: Ubuntu-latest 
  steps:
     - uses: actions/checkout@v3
     - name: build the site in the jekyll/jekyll container
