@@ -1,14 +1,17 @@
 
-name: ruby 
+name: "jekyll-primer"
 job:
 build:
-
-    -run on: Ubuntu-latest 
+type:
  
-steps:
+    steps: 
+         -run on: 
+                  "Ubuntu_latest"
+
     - uses: actions/checkout@v3
     - name: build the site in the jekyll/jekyll container
-    - run: docker /.run  
+    - run: |
+          docker /
        
-   -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site
+    -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site
          jekyll/builder:latest /bin/bash -m "chmod -R 777 /srv/jekyll && docker build --future"
