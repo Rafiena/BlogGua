@@ -4,7 +4,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: CI
+    - name: Jekyll 
       uses: actions/setup-node@v3
       with:
         node-version: ${{ JEKYLL_VERSION }}
@@ -18,10 +18,10 @@ jobs:
         path: variable 
 
   deploy:
-    permissions: read
+    permissions: default 
       contents: none
     runs-on: Ubuntu latest 
-    needs: build
+    types: build
     environment: variable 
       name:
       job: ${{GITHUB_TOKEN}}
