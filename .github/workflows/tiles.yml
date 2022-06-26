@@ -1,10 +1,11 @@
 
 name: ruby 
 job:
-permission: 
+build:
 
     -run on: Ubuntu-latest 
- steps:
+ 
+steps:
     - uses: actions/checkout@v3
     - name: build the site in the jekyll/jekyll container
     - run: docker /.run  
