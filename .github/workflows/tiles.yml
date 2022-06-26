@@ -5,8 +5,8 @@ build:
 type:
  
     steps: 
-         -run on: 
-                  "Ubuntu_latest"
+         -run on: Ubuntu |>
+                  
 
     - uses: actions/checkout@v3
     - name: build the site in the jekyll/jekyll container
