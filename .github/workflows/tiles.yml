@@ -5,7 +5,7 @@ build:
 type:
  
     steps: 
-         -run on: Ubuntu |>
+          run on: Ubuntu-20.04
                   
 
     - uses: actions/checkout@v3
