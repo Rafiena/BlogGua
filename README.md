@@ -1,2 +1,2 @@
-∆∆where that key???∆∆ "http://m.facebook.com/2008/fbml"
+Where that key??? "http://www.facebook.com/2008/fbml"
 
