@@ -1,2 +1,2 @@
-name: docker_image
-plugin: paginate
+build: Jekyll
+
