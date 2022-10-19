@@ -21,7 +21,7 @@ permissions:
 # Allow one concurrent deployment
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   # Build job
@@ -69,12 +69,11 @@ jobs:
             ${{ runner.os }}-nuxt-build-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Upload Atifact
-        run: wget https://download.mono-project.com/repo/ubuntu/dists/alpha-focal/main/source/Release
+      -name: Upload Page
        uses: action/upload-pages-artifact@v1
         with:
           path: ./dist  
- # ${{ steps.detect-package-manager.outputs.manager }} run generate
+          url: ${{ steps.detect-package-manager.outputs.manager }} run generate
         
      # - name: Upload artifact
      #   uses: actions/upload-pages-artifact@v1
